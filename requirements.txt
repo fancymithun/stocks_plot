@@ -1,0 +1,4 @@
+pandas
+requests
+matplotlib
+flask  # (or whatever web framework you are using in app.py)
