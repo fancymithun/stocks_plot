@@ -1,13 +1,18 @@
+import os
 from flask import Flask, jsonify
 from flask_cors import CORS
 import requests
 import pandas as pd
 import time
+from dotenv import load_dotenv
+
+# 2. Load the variables from .env
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
-API_KEY='YDHNL5VEVABYDX1F'
+API_KEY = os.getenv('API_KEY')
 
 def get_stock_data(symbol):
     url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={symbol}&apikey={API_KEY}'
